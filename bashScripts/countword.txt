@@ -1,0 +1,23 @@
+//receive list of files count and report occurence of each word that present in 1st arg on other arg file
+
+#!/bin/bash
+if [$# -lt 3]
+then 
+	echo "Insufficient Arguments"
+	exit 1
+fi
+f=$1
+for i in 'cat $f'
+do
+	for j in $*
+	do
+		if [-f $j]
+		then
+			c='grep-c$i$j'
+			echo"no of occurences of $i in $j is :$c"
+		else
+			echo"$j is not a file"
+		fi
+	done
+done
+			

@@ -1,0 +1,23 @@
+// delete all lines containing word in one or more files
+
+#!/bin/bash
+if [$# -lt 3]
+then 
+	echo "Insufficient Arguments"
+	exit 1
+else
+	echo"Enter word to delete:"
+	read word
+	for f in $*
+	do
+		if[-f$f]
+		then 
+			echo"before deleting:"
+			cat $f
+			echo"After deleting:"
+			grep -v "$word" $f>$f
+		 	cat $f
+		else
+			echo"$f is not file"
+		fi
+	done

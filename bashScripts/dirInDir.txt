@@ -1,0 +1,13 @@
+//list all directories in directory
+
+#!/bin/bash
+echo"Enter directory name:"
+read dir
+if[-d $dir]
+then
+	cd $dir
+	echo -e "Directories are:"
+	echo -e "'ls -l | grep "^d" | cut -d "" -f9 '"
+else
+	echo "not a directory"
+fi  

@@ -1,0 +1,14 @@
+//display list of files in current directory to which user have all 3 permissions
+
+#!/bin/bash
+echo -e "files having permissions are:"
+for i in *
+do 
+	if[-f$i]
+	then
+		if[-r$i -a -w$i -a -x$i]
+		then
+			echo"$i"
+		fi
+	fi
+done
